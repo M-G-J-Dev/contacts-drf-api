@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "authentication",
     "contacts",
+    "corsheaders",
 ]
 SWAGGER_SETTINGS = {
     "SECURITY_DEFINITIONS": {
@@ -146,6 +147,10 @@ REST_FRAMEWORK = {
 JWT_SECRET_KEY = (
     "JWT_SECRET_KEYJWT_SECRET_KEYJWT_SECRET_KEYJWT_SECRET_KEYJWT_SECRET_KEY"
 )
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+
 
 
 django_heroku.settings(locals())
