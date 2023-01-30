@@ -92,9 +92,18 @@ WSGI_APPLICATION = "contactsapi.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # }
+    # Railway database
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "railway",
+        "HOST": "containers-us-west-169.railway.app",
+        "PORT": "7665",
+        "USER": "postgres",
+        "PASSWORD": "nSBtpGz3klJ59O2dFZ7t",
     }
 }
 
@@ -157,3 +166,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 
 # django_heroku.settings(locals())
+
+
+print(os.environ.get("JWT_SECRET_KEY"))
+print(os.getenv("JWT_SECRET_KEY"))
